@@ -1,0 +1,1 @@
+D:\Visual C#\Lap05-Visual-C-\U21\HamburgerExample\HamburgerExample.csproj;x86
