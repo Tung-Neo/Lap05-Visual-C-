@@ -27,6 +27,10 @@ namespace Hamburger_Heaven_Challenge
             this.InitializeComponent();
 
             MyFrame.Navigate(typeof(Financial));
+            TitleTextBlock.Text = "Financial";
+
+            Backbutton.Visibility = Visibility.Collapsed;
+            Financial.IsSelected = true;
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -37,12 +41,27 @@ namespace Hamburger_Heaven_Challenge
 
         private void Backbutton_Click(object sender, RoutedEventArgs e)
         {
-
+            if(MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+                Financial.IsSelected = true;
+            }
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if(Financial.IsSelected)
+            {
+                Backbutton.Visibility = Visibility.Collapsed;
+                MyFrame.Navigate(typeof(Financial));
+                TitleTextBlock.Text = "Financial";
+            }
+            else if(Food.IsSelected)
+            {
+                Backbutton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Food));
+                TitleTextBlock.Text = "Food";
+            }
         }
     }
 }

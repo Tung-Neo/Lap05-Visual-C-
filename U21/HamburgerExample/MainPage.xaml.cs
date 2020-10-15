@@ -34,8 +34,8 @@ namespace HamburgerExample
 
         private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (ShareListBoxItem.IsSelected) { ResultTextBlock.Text = "Share"; }
-            //else if (FavoriteListBoxItem.IsSelected) { ResultTextBlock.Text = "Favorites"; }
+            if (ShareListBoxItem.IsSelected) { ResultTextBlock.Text = "Share"; }
+            else if (FavoriteListBoxItem.IsSelected) { ResultTextBlock.Text = "Favorites"; }
         }
     }
 }
